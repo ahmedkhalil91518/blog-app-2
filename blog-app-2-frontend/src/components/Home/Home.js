@@ -7,7 +7,11 @@ import { Card } from "react-bootstrap";
 function Home() {
   const dispatch = useDispatch();
   const posts = useSelector((state) => {
-    return state.posts;
+    if (state.search.length > 0) {
+      return state.search;
+    } else {
+      return state.posts;
+    }
   });
 
   useEffect(() => {
@@ -37,7 +41,7 @@ function Home() {
       </div>
       <div className={HomeCSS.tags}>
         <h2>Tags</h2>
-        <div  className={HomeCSS.tagsContainer}>#cars #cats #dogs</div>
+        <div className={HomeCSS.tagsContainer}>#cars #cats #dogs</div>
       </div>
     </div>
   );
