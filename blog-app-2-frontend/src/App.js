@@ -1,5 +1,5 @@
 import "./App.css";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import "../node_modules/bootstrap/dist/css/bootstrap.css"
 
 function App() {
