@@ -56,8 +56,8 @@ function Navigation() {
           <i className="fa-solid fa-magnifying-glass"></i>{" "}
         </Button>
         <Button variant="light" size="sm" className={NavigationCSS.button}>
-          <Nav.Link>
-            <Link  className={NavigationCSS.button} to="/signup-login">Signup/Login</Link>
+          <Nav.Link as={Link} className={NavigationCSS.button} to="/signup-login">
+            Signup/Login
           </Nav.Link>
         </Button>
       </Container>
