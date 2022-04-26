@@ -2,6 +2,9 @@ button a,
 button i {
   color: var(--bs-red) !important;
 }
-button {
-  height: 50px;
+button, input {
+  height: 35px;
+}
+.nav-link {
+    padding: auto;
 }
