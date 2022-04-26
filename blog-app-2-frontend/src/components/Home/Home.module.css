@@ -1,6 +1,28 @@
 .grid {
   /* grid styles */
+  margin: 10px;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  row-gap: 1em;
+  column-gap: 100px;
   justify-items: center;
+}
+.main {
+  width: 70%;
+  margin: 20px;
+}
+.tags {
+  width: 25%;
+  margin: 20px;
+  position: fixed;
+  right: 0;
+}
+.tagsContainer {
+    background-color: rgb(100, 99, 99);
+    color: white;
+    border: 2px black;
+    border-radius: 2%;
+    height: 50vh;
+    
 }
