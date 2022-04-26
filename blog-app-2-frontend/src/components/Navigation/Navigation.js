@@ -15,7 +15,7 @@ function Navigation() {
           <i className="fa-solid fa-magnifying-glass"></i>{" "}
         </Button>
         <Button variant="light" size="sm">
-          <Nav.Link href="#home">Signup/Login</Nav.Link>
+          <Nav.Link href="#home" className="p-0">Signup/Login</Nav.Link>
         </Button>
       </Container>
     </Navbar>
