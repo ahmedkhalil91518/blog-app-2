@@ -17,3 +17,16 @@
   flex-direction: row;
   margin: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+  .footerRow {
+    flex-direction: column;
+  }
+  .footer {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .icons {
+    margin: 20px auto !important;
+  }
+}
