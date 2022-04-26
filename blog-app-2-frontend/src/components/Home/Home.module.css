@@ -10,7 +10,7 @@
 }
 .main {
   width: 70%;
-  margin: 20px;
+  margin: 30px;
 }
 .tags {
   width: 25%;
@@ -24,4 +24,12 @@
   border: 2px black;
   border-radius: 2%;
   height: 50vh;
+}
+@media only screen and (max-width: 1000px) {
+  .tags{
+    display: none;
+  }
+  .main{
+    width: 100%;
+  }
 }
