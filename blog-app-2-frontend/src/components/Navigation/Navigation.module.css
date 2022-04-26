@@ -2,6 +2,25 @@ button a,
 button i {
   color: var(--bs-red) !important;
 }
-button, input {
+button,
+input {
   height: 35px;
+}
+input {
+  display: block !important;
+  width: 250px !important;
+}
+.searchButton {
+  display: none !important;
+}
+.container {
+  position: relative;
+}
+@media only screen and (max-width: 600px) {
+  input {
+    display: none !important;
+  }
+  .searchButton {
+    display: block !important;
+  }
 }
