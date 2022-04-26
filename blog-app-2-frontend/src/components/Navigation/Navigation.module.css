@@ -1,5 +1,5 @@
 .button {
-  height: 30px !important;
+  height: 40px !important;
   color: var(--bs-red) !important;
   display: flex !important;
   align-items: center !important;
@@ -59,4 +59,8 @@
     border-radius: 50% !important;
     height: 30px !important;
     width: 30px !important;
+}
+.brand, .brand:hover {
+  color: white;
+  text-decoration: none;
 }
