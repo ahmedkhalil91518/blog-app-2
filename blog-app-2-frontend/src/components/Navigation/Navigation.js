@@ -9,7 +9,7 @@ function Navigation() {
     setSearchOpen(!searchOpen);
   };
   return (
-    <Navbar bg="danger" expand="lg" variant="dark" className="w-100">
+    <Navbar bg="danger" expand="lg" variant="dark" className="w-100" sticky="top">
       <Container className={"d-flex " + NavigationCSS.container}>
         <Navbar.Brand className="flex-grow-1">
           <Link to="/" className={NavigationCSS.brand}>Blog App 2</Link>
