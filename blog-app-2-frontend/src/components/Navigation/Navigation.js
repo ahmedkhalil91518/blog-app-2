@@ -6,6 +6,7 @@ function Navigation() {
   const [searchOpen, setSearchOpen] = useState(false);
   const handleClick = () => {
     setSearchOpen(!searchOpen);
+    console.log("hi");
   };
   return (
     <Navbar bg="danger" expand="lg" variant="dark">
@@ -16,18 +17,20 @@ function Navigation() {
         <Form.Control
           type="text"
           placeholder="Search Here"
-          className="m-3 search"
+          className={"m-3 " + NavigationCSS.search}
         />
         <Button
           variant="light"
           size="sm"
-          className={"me-3 " + NavigationCSS.searchButton}
+          className={
+            "me-3 " + NavigationCSS.searchButton + " " + NavigationCSS.button
+          }
           onClick={handleClick}
         >
           <i className="fa-solid fa-magnifying-glass"></i>{" "}
         </Button>
         <Button variant="light" size="sm">
-          <Nav.Link href="#home" className="p-0">
+          <Nav.Link href="#home" className={NavigationCSS.button}>
             Signup/Login
           </Nav.Link>
         </Button>
