@@ -1,3 +1,7 @@
-button a {
+button a,
+button i {
   color: var(--bs-red) !important;
+}
+button {
+  height: 50px;
 }
