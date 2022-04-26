@@ -9,14 +9,14 @@
       "minutesToRead": "45 Minutes",
       "rating": 4.66,
       "numberOfComments": 7,
-      "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla lacus varius mi egestas, quis interdum arcu iaculis. Nam eget imperdiet felis, et malesuada mi....."
+      "preview": "bender Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla lacus varius mi egestas, quis interdum arcu iaculis. Nam eget imperdiet felis, et malesuada mi....."
     },
     {
       "id": "335",
       "title": "how to solve a problem",
       "creatorName": "ahmed khalil",
       "dateCreated": "2022-04-05",
-      "tags": ["easy", "good", "bad"],
+      "tags": ["easy", "good", "bad", "ugly"],
       "minutesToRead": "45 Minutes",
       "rating": 4.66,
       "numberOfComments": 7,
@@ -87,7 +87,8 @@
       "rating": 4.66,
       "numberOfComments": 7,
       "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla lacus varius mi egestas, quis interdum arcu iaculis. Nam eget imperdiet felis, et malesuada mi....."
-    },    {
+    },
+    {
       "id": "234",
       "title": "how to solve a problem",
       "creatorName": "ahmed khalil",
@@ -174,7 +175,8 @@
       "rating": 4.66,
       "numberOfComments": 7,
       "preview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla lacus varius mi egestas, quis interdum arcu iaculis. Nam eget imperdiet felis, et malesuada mi....."
-    },    {
+    },
+    {
       "id": "134",
       "title": "how to solve a problem",
       "creatorName": "ahmed khalil",
