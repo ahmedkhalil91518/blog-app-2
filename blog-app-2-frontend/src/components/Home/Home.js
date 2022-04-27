@@ -4,6 +4,7 @@ import { getAllPostsAC } from "../../reducers/postsReducer";
 import HomeCSS from "./Home.module.css";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Rating } from "@mui/material";
 
 function Home() {
   const dispatch = useDispatch();
@@ -42,11 +43,22 @@ function Home() {
                 <Card.Body>
                   <Card.Title>
                     {" "}
-                    <Link to={`/posts/${post.id}`} className={HomeCSS.links}>{post.title}</Link>
+                    <Link to={`/posts/${post.id}`} className={HomeCSS.links}>
+                      {post.title}
+                    </Link>
                   </Card.Title>
-                  <Card.Subtitle>{post.tags.map(tag => {
-                    return <span>#{tag} </span>
-                  })}</Card.Subtitle>
+                  <Card.Subtitle>
+                    {post.tags.map((tag) => {
+                      return <span>#{tag} </span>;
+                    })}
+                  </Card.Subtitle>
+                  <div>
+                    <Rating
+                      name="simple-controlled"
+                      value={+post.rating}
+                      className="my-2"
+                    />
+                  </div>
                   <Card.Text>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
