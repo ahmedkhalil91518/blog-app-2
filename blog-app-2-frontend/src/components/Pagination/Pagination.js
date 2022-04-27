@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "@mui/material";
 import PaginationCSS from "./Pagination.module.css";
 
-function Pagination({ items }) {
+function Pagination() {
   const itemsPerPage = 6;
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
@@ -32,7 +32,14 @@ function Pagination({ items }) {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    setCurrentItems(posts.slice(itemOffset, endOffset));
+    const targetPosts = posts.slice(itemOffset, endOffset);
+    if (targetPosts < itemsPerPage) {
+      setCurrentItems(posts);
+    } else {
+      setCurrentItems(targetPosts);
+    }
+    console.log(posts);
+    console.log(currentItems);
     setPageCount(Math.ceil(posts.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, posts]);
 
