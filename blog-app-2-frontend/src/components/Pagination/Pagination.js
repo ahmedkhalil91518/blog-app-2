@@ -12,6 +12,9 @@ function Pagination({ items }) {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+  const [itemOffset, setItemOffset] = useState(0);
 
   const dispatch = useDispatch();
   const posts = useSelector((state) => {
@@ -25,10 +28,6 @@ function Pagination({ items }) {
   useEffect(() => {
     dispatch(getAllPostsAC());
   }, [dispatch]);
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
-
   useEffect(() => {
     // Fetch items from another resources.
     const endOffset = itemOffset + itemsPerPage;
@@ -45,12 +44,12 @@ function Pagination({ items }) {
     );
     setItemOffset(newOffset);
   };
-
   return (
     <div className="d-flex flex-column align-items-center justify-content-center">
       <div className={PaginationCSS.grid}>
         {currentItems &&
           currentItems.map((post) => {
+            console.log(currentItems);
             return (
               <Card key={post.id}>
                 <Card.Header className="d-flex flex-row">

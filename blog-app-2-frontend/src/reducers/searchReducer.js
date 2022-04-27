@@ -17,8 +17,9 @@ const searchSlice = createSlice({
         keys: ["title", "creatorName", "tags"],
       });
       const results = fuse.search(action.payload);
-      console.log(results);
-      return results;
+      return results.map(i => {
+        return i.item
+      });
     },
   },
 });
