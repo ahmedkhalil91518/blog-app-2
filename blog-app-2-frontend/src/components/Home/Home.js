@@ -7,7 +7,7 @@ import Pagination from "../Pagination/Pagination";
 function Home() {
   return (
     <div className="d-flex flex-row">
-      <div className={HomeCSS.main}>
+      <div className={"footerfix " + HomeCSS.main}>
         <h1>Posts</h1>
         <div>
           <Pagination />

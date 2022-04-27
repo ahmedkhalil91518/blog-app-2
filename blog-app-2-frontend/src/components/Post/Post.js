@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getAllPostsAC } from "../../reducers/postsReducer";
 import { useDispatch, useSelector } from "react-redux";
+import { Card } from "react-bootstrap";
 
 function Post() {
   const id = useParams().id;
@@ -26,7 +27,31 @@ function Post() {
     return x[0];
   };
 
-  return <>{posts.length > 0 ? <div>{postById(id).title}</div> : null}</>;
+  if (posts.length > 0) {
+    return (
+      <div className="d-flex flex-column align-items-start m-5 footerfix">
+        <div>
+          <Card key={postById(id).id}>
+            <div className="d-flex flex-row m-3">
+              <img
+                src={postById(id).creatorPic}
+                alt="creator"
+                className={PostCSS.circle}
+              />{" "}
+              <div className="d-flex flex-column mx-3">
+                <div> by {postById(id).creatorName}</div>
+                <div>{postById(id).dateCreated}</div>
+              </div>
+            </div>
+          </Card>
+        </div>
+        <h1 className="My-5">{postById(id).title}</h1>
+        <div className={PostCSS.content}>{postById(id).content}</div>
+      </div>
+    );
+  } else {
+    return null;
+  }
 }
 
 export default Post;

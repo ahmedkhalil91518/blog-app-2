@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Navbar, Container, Nav, Button, Form } from "react-bootstrap";
 import NavigationCSS from "./Navigation.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { searchPosts } from "../../reducers/searchReducer";
+
 function Navigation() {
   const [searchOpen, setSearchOpen] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleClick = () => {
     setSearchOpen(!searchOpen);
   };
@@ -30,6 +33,7 @@ function Navigation() {
             type="text"
             placeholder="Search here"
             onChange={(e) => {
+              navigate("/");
               dispatch(searchPosts(e.target.value));
             }}
             className={"m-3 " + NavigationCSS.search}
@@ -41,6 +45,7 @@ function Navigation() {
               type="text"
               placeholder="Search Here"
               onChange={(e) => {
+                navigate("/");
                 dispatch(searchPosts(e.target.value));
               }}
               className={NavigationCSS.search + " " + NavigationCSS.searchPopup}
