@@ -73,6 +73,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
             deleteComment={deleteComment}
             updateComment={updateComment}
             currentUserId={currentUserId}
+            backendComments={backendComments}
           />
         ))}
       </div>

@@ -2,7 +2,6 @@ import CommentForm from "./CommentForm";
 
 const Comment = ({
   comment,
-  replies,
   setActiveComment,
   activeComment,
   updateComment,
@@ -10,7 +9,21 @@ const Comment = ({
   addComment,
   parentId = null,
   currentUserId,
+  backendComments,
 }) => {
+  const getReplies = (commentId) => {
+    console.log(
+      backendComments.filter(
+        (backendComment) => backendComment.parentId === commentId
+      )
+    );
+    return backendComments
+      .filter((backendComment) => backendComment.parentId === commentId)
+      .sort(
+        (a, b) =>
+          new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+      );
+  };
   const isEditing =
     activeComment &&
     activeComment.id === comment.id &&
@@ -22,11 +35,14 @@ const Comment = ({
   const fiveMinutes = 300000;
   const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
   const canDelete =
-    currentUserId === comment.userId && replies.length === 0 && !timePassed;
+    currentUserId === comment.userId &&
+    getReplies(comment.id).length === 0 &&
+    !timePassed;
   const canReply = Boolean(currentUserId);
   const canEdit = currentUserId === comment.userId && !timePassed;
   const replyId = parentId ? parentId : comment.id;
   const createdAt = new Date(comment.createdAt).toLocaleDateString();
+
   return (
     <div key={comment.id} className="comment">
       <div className="comment-image-container">
@@ -85,9 +101,9 @@ const Comment = ({
             handleSubmit={(text) => addComment(text, replyId)}
           />
         )}
-        {replies.length > 0 && (
+        {getReplies(comment.id).length > 0 && (
           <div className="replies">
-            {replies.map((reply) => (
+            {getReplies(comment.id).map((reply) => (
               <Comment
                 comment={reply}
                 key={reply.id}
@@ -97,8 +113,8 @@ const Comment = ({
                 deleteComment={deleteComment}
                 addComment={addComment}
                 parentId={comment.id}
-                replies={[]}
                 currentUserId={currentUserId}
+                backendComments={backendComments}
               />
             ))}
           </div>

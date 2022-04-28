@@ -16,7 +16,6 @@ function Post() {
   }, [dispatch]);
 
   const posts = useSelector((state) => {
-    console.log(state.posts);
     return state.posts;
   });
 
@@ -24,7 +23,6 @@ function Post() {
     const x = posts.filter((a) => {
       return a.id === id;
     });
-    console.log(x);
     return x[0];
   };
 
