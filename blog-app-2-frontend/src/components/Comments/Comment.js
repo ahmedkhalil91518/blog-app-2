@@ -12,11 +12,6 @@ const Comment = ({
   backendComments,
 }) => {
   const getReplies = (commentId) => {
-    console.log(
-      backendComments.filter(
-        (backendComment) => backendComment.parentId === commentId
-      )
-    );
     return backendComments
       .filter((backendComment) => backendComment.parentId === commentId)
       .sort(
@@ -103,20 +98,21 @@ const Comment = ({
         )}
         {getReplies(comment.id).length > 0 && (
           <div className="replies">
-            {getReplies(comment.id).map((reply) => (
-              <Comment
-                comment={reply}
-                key={reply.id}
-                setActiveComment={setActiveComment}
-                activeComment={activeComment}
-                updateComment={updateComment}
-                deleteComment={deleteComment}
-                addComment={addComment}
-                parentId={comment.id}
-                currentUserId={currentUserId}
-                backendComments={backendComments}
-              />
-            ))}
+            {getReplies(comment.id).map((reply) => {
+              return (
+                <Comment
+                  comment={reply}
+                  key={reply.id}
+                  setActiveComment={setActiveComment}
+                  activeComment={activeComment}
+                  updateComment={updateComment}
+                  deleteComment={deleteComment}
+                  addComment={addComment}
+                  currentUserId={currentUserId}
+                  backendComments={backendComments}
+                />
+              );
+            })}
           </div>
         )}
       </div>

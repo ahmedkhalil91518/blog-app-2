@@ -40,11 +40,19 @@ export const getComments = async () => {
       parentId: "3",
       createdAt: "2021-08-16T23:00:33.010+02:00",
     },
+    {
+      id: "6",
+      body: "First comment first child m",
+      username: "John",
+      userId: "2",
+      parentId: "5",
+      createdAt: "2021-08-16T23:00:33.010+02:00",
+    },
   ];
 };
 
 export const createComment = async (text, parentId = null) => {
-  return {
+  const x = {
     id: Math.random().toString(36).substr(2, 9),
     body: text,
     parentId,
@@ -52,6 +60,8 @@ export const createComment = async (text, parentId = null) => {
     username: "John",
     createdAt: new Date().toISOString(),
   };
+  console.log(x);
+  return x;
 };
 
 export const updateComment = async (text) => {
