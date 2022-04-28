@@ -38,8 +38,6 @@ function Pagination() {
     } else {
       setCurrentItems(targetPosts);
     }
-    console.log(posts);
-    console.log(currentItems);
     setPageCount(Math.ceil(posts.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, posts]);
 

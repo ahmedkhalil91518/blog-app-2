@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getAllPostsAC } from "../../reducers/postsReducer";
 import { useDispatch, useSelector } from "react-redux";
 import { Card } from "react-bootstrap";
+import Comments from "../Comments/Comments";
 
 function Post() {
   const id = useParams().id;
@@ -47,6 +48,10 @@ function Post() {
         </div>
         <h1 className="My-5">{postById(id).title}</h1>
         <div className={PostCSS.content}>{postById(id).content}</div>
+        <Comments
+        commentsUrl="http://localhost:3004/comments"
+        currentUserId="1"
+      />
       </div>
     );
   } else {

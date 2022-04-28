@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllPostsAC } from "../../reducers/postsReducer";
+import React from "react";
 import HomeCSS from "./Home.module.css";
 import Pagination from "../Pagination/Pagination";
 
