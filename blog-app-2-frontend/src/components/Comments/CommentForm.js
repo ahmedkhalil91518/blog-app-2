@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 
 const CommentForm = ({
   handleSubmit,
@@ -15,25 +16,26 @@ const CommentForm = ({
     setText("");
   };
   return (
-    <form onSubmit={onSubmit}>
-      <textarea
-        className="comment-form-textarea"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <button className="comment-form-button" disabled={isTextareaDisabled}>
+    <Form onSubmit={onSubmit}>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Write a comment</Form.Label>
+        <Form.Control
+          as="textarea"
+          rows={3}
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+      </Form.Group>
+      <Button variant="danger" disabled={isTextareaDisabled}>
+        {" "}
         {submitLabel}
-      </button>
+      </Button>{" "}
       {hasCancelButton && (
-        <button
-          type="button"
-          className="comment-form-button comment-form-cancel-button"
-          onClick={handleCancel}
-        >
+        <Button type="button" variant="danger" onClick={handleCancel}>
           Cancel
-        </button>
+        </Button>
       )}
-    </form>
+    </Form>
   );
 };
 
