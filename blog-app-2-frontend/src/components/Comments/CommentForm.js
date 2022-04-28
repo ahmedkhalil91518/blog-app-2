@@ -16,26 +16,26 @@ const CommentForm = ({
     setText("");
   };
   return (
-    <Form onSubmit={onSubmit}>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Write a comment</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={3}
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-      </Form.Group>
-      <Button variant="danger" disabled={isTextareaDisabled}>
-        {" "}
-        {submitLabel}
-      </Button>{" "}
-      {hasCancelButton && (
-        <Button type="button" variant="danger" onClick={handleCancel}>
-          Cancel
-        </Button>
-      )}
-    </Form>
+      <form onSubmit={onSubmit}>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Label>Write a comment</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </Form.Group>
+        <Button variant="danger"  type="submit"  disabled={isTextareaDisabled}>
+          {" "}
+          {submitLabel}
+        </Button>{" "}
+        {hasCancelButton && (
+          <Button type="submit" variant="danger" onClick={handleCancel}>
+            Cancel
+          </Button>
+        )}
+      </form>
   );
 };
 
