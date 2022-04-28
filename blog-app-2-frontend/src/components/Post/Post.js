@@ -30,28 +30,37 @@ function Post() {
 
   if (posts.length > 0) {
     return (
-      <div className="d-flex flex-column align-items-start m-5 footerfix">
-        <div>
-          <Card key={postById(id).id}>
-            <div className="d-flex flex-row m-3">
-              <img
-                src={postById(id).creatorPic}
-                alt="creator"
-                className={PostCSS.circle}
-              />{" "}
-              <div className="d-flex flex-column mx-3">
-                <div> by {postById(id).creatorName}</div>
-                <div>{postById(id).dateCreated}</div>
-              </div>
+      <div className="container">
+        <div className="row">
+          <div className="col"></div>
+          <div className="footerfix col-10 col-md-8 col-lg-6 my-2">
+            <div className=" my-5">
+              <Card key={postById(id).id}>
+                <div className="d-flex flex-row m-3">
+                  <img
+                    src={postById(id).creatorPic}
+                    alt="creator"
+                    className={PostCSS.circle}
+                  />{" "}
+                  <div className="d-flex flex-column mx-3">
+                    <div> by {postById(id).creatorName}</div>
+                    <div>{postById(id).dateCreated}</div>
+                  </div>
+                </div>
+              </Card>
             </div>
-          </Card>
+            <h1 className="my-2">{postById(id).title}</h1>
+            <div className={"my-2 " + PostCSS.content}>
+              {postById(id).content}
+            </div>
+            <Comments
+              commentsUrl="http://localhost:3004/comments"
+              currentUserId="1"
+              className="my-2"
+            />
+          </div>{" "}
+          <div className="col"></div>
         </div>
-        <h1 className="My-5">{postById(id).title}</h1>
-        <div className={PostCSS.content}>{postById(id).content}</div>
-        <Comments
-        commentsUrl="http://localhost:3004/comments"
-        currentUserId="1"
-      />
       </div>
     );
   } else {
