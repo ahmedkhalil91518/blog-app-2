@@ -11,26 +11,9 @@
 .main {
   width: 70%;
   margin: 30px;
-  
-}
-.tags {
-  width: 25%;
-  margin: 20px;
-  position: fixed;
-  right: 0;
-}
-.tagsContainer {
-  background-color: rgb(100, 99, 99);
-  color: white;
-  border: 2px black;
-  border-radius: 2%;
-  height: 50vh;
 }
 @media only screen and (max-width: 1000px) {
-  .tags{
-    display: none;
-  }
-  .main{
+  .main {
     width: 100%;
   }
 }

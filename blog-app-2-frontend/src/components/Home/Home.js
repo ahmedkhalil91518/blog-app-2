@@ -1,6 +1,7 @@
 import React from "react";
 import HomeCSS from "./Home.module.css";
 import Pagination from "../Pagination/Pagination";
+import Tags from "../Tags/Tags";
 
 function Home() {
   return (
@@ -11,10 +12,7 @@ function Home() {
           <Pagination />
         </div>
       </div>
-      <div className={HomeCSS.tags}>
-        <h2>Tags</h2>
-        <div className={HomeCSS.tagsContainer}>#cars #cats #dogs</div>
-      </div>
+      <Tags />
     </div>
   );
 }
