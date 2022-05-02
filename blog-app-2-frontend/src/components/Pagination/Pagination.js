@@ -54,7 +54,6 @@ function Pagination() {
       <div className={PaginationCSS.grid}>
         {currentItems &&
           currentItems.map((post) => {
-            console.log(currentItems);
             return (
               <Card key={post.id}>
                 <Card.Header className="d-flex flex-row">
@@ -80,7 +79,7 @@ function Pagination() {
                   </Card.Title>
                   <Card.Subtitle>
                     {post.tags.map((tag) => {
-                      return <span>#{tag} </span>;
+                     return <span key={tag.id}>#{tag.name} </span>;
                     })}
                   </Card.Subtitle>
                   <div>
